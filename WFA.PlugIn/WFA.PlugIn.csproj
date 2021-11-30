@@ -7,8 +7,8 @@
     <ProjectGuid>{C1311BB4-79C4-4610-9E6C-E2DA40E438AD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WFA_PlugIn</RootNamespace>
-    <AssemblyName>WFA-PlugIn</AssemblyName>
+    <RootNamespace>WFA.PlugIn</RootNamespace>
+    <AssemblyName>WFA.PlugIn</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -31,6 +31,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\logo_dSi_12.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -120,6 +123,42 @@
       <Project>{B4A79F70-8D7B-4E9F-A156-F325F46BCBAF}</Project>
       <Name>UtilityLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_dSi_9.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_dSi_10.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_dSi_11.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_dSi_12.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_dSi_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_dSi_2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_dSi_3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_dSi_4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_dSi_5.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_dSi_6.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_dSi_7.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_dSi_8.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

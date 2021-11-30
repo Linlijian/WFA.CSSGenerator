@@ -46,14 +46,57 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Helper\ButtonHelper.cs" />
+    <Compile Include="Helper\Global.cs" />
+    <Compile Include="Helper\UserControlDockStyle.cs" />
+    <Compile Include="Helper\UserControlHelper.cs" />
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\exam\UCClientExam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\exam\UCClientExam.Designer.cs">
+      <DependentUpon>UCClientExam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\exam\UCEXAM001.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\exam\UCEXAM001.Designer.cs">
+      <DependentUpon>UCEXAM001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\exam\UCEXAM002.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\exam\UCEXAM002.Designer.cs">
+      <DependentUpon>UCEXAM002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCClientBody.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCClientBody.Designer.cs">
+      <DependentUpon>UCClientBody.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCMenu.Designer.cs">
+      <DependentUpon>UCMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCPDF2Image.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCPDF2Image.Designer.cs">
+      <DependentUpon>UCPDF2Image.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +105,23 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\exam\UCClientExam.resx">
+      <DependentUpon>UCClientExam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\exam\UCEXAM001.resx">
+      <DependentUpon>UCEXAM001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCClientBody.resx">
+      <DependentUpon>UCClientBody.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCMenu.resx">
+      <DependentUpon>UCMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCPDF2Image.resx">
+      <DependentUpon>UCPDF2Image.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -77,14 +136,93 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\UCControl\UCControl.csproj">
+      <Project>{64E080D6-6ED2-4113-9360-5D34D3E01E20}</Project>
+      <Name>UCControl</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UtilityLib\UtilityLib.csproj">
       <Project>{b4a79f70-8d7b-4e9f-a156-f325f46bcbaf}</Project>
       <Name>UtilityLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WFA-PlugIn\WFA-PlugIn.csproj">
+    <ProjectReference Include="..\WFA.PlugIn\WFA.PlugIn.csproj">
       <Project>{c1311bb4-79c4-4610-9e6c-e2da40e438ad}</Project>
-      <Name>WFA-PlugIn</Name>
+      <Name>WFA.PlugIn</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_page_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_file_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_file_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_gallery_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jpg_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multiply_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multiply_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdf_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdf_window_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus_math_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subtract_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggle_indeterminate_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggle_off_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggle_on_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export_pdf_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_settings_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_tree_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="login_w_wuI_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
